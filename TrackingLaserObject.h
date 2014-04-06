@@ -35,10 +35,10 @@ public:
 		this->targetVectorT=targetVectorT;
 		this->mass=mass;
 
-		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,mapPtr->velocityFrameBuffer);
-		glReadBuffer(GL_COLOR_ATTACHMENT0_EXT);
-		glPushAttrib(GL_VIEWPORT_BIT | GL_COLOR_BUFFER_BIT);
-		glViewport(0,0,mapPtr->frameBufferWidth,mapPtr->frameBufferHeight);
+	//	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,mapPtr->velocityFrameBuffer);
+	//	glReadBuffer(GL_COLOR_ATTACHMENT0_EXT);
+	//	glPushAttrib(GL_VIEWPORT_BIT | GL_COLOR_BUFFER_BIT);
+	//	glViewport(0,0,mapPtr->frameBufferWidth,mapPtr->frameBufferHeight);
 
 
 		ptsIndex=ptsEnd=0;
@@ -76,9 +76,9 @@ public:
 		for(int a=ptsEnd;a<TRACKPOINTS;++a) pts[a]=pts[ptsEnd];
 		
 		//Reset framebuffer
-		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
+	//	glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 
-		glPopAttrib();
+	//	glPopAttrib();
 	
 	}
 	
@@ -114,9 +114,10 @@ public:
 
 		glEnd();
 
+		glPopAttrib();
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 		if(singleFBO) glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-		glPopAttrib();
+
 
 		//Draw head
 		glColor4f(color.x,color.y,color.z,.5);

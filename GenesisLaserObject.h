@@ -78,10 +78,12 @@ public:
 						position.y+defaultSinValues[SIN_TABLE_SIZE/15*a]*newRad*1.3);
 		glEnd();
 
+		glPopAttrib();
+
 	//	glBlendFunc(GL_SRC_ALPHA, GL_ONE);
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 		if(singleFBO) glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-		glPopAttrib();
+		
 	}
 
 	virtual void update(){
@@ -152,9 +154,9 @@ public:
 						}
 					}
 				}
+				glPopAttrib();
 
 				glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
-				glPopAttrib();
 				life=0;
 			}
 		}

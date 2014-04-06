@@ -69,11 +69,11 @@ public:
 		glEnd();
 
 		glPopAttrib();
-
+		glPopAttrib();
 
 		glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 		if(singleFBO) glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-		glPopAttrib();
+
 
 
 		glPushAttrib(GL_ENABLE_BIT);

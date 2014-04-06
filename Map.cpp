@@ -171,7 +171,7 @@ Map::Map(float dt,float dxy,float viscosity,int frameBufferWidth,int frameBuffer
 	//Setup framebuffers
 	GLint maxBuffers;
 	glGetIntegerv(GL_MAX_COLOR_ATTACHMENTS_EXT, &maxBuffers);
-maxBuffers = 3;
+//maxBuffers = 3;
 
 	if(maxBuffers>=4){
 		singleFBO=true;

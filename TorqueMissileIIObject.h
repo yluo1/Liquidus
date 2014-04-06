@@ -87,9 +87,10 @@ public:
 			glVertex3fv((GLfloat*)&(next->position));
 			glEnd();
 
+			glPopAttrib();
 			glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 			if(singleFBO) glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-			glPopAttrib();
+			
 		}
 
 	}

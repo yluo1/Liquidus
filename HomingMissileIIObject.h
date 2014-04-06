@@ -74,10 +74,11 @@ public:
 			glTexCoord2d(0,0); glVertex2f(position.x+newRad,position.y-newRad);
 			glTexCoord2d(1,0); glVertex2f(position.x-newRad,position.y-newRad);
 			glEnd();
+			glPopAttrib();
 
 			glBindFramebufferEXT(GL_FRAMEBUFFER_EXT,0);
 			if(singleFBO) glDrawBuffer(GL_COLOR_ATTACHMENT0_EXT);
-			glPopAttrib();
+		
 		}
 
 		glColor4f(color.x*.25+.75,color.y*.25+.75,color.z*.25+.75,1.0);
